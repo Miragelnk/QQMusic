@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>image/title/ico_kefu_nor.png</file>
+        <file>image/title/icon_close_dialog.png</file>
+        <file>image/title/icon_close_dialog_hover.png</file>
+    </qresource>
+</RCC>
