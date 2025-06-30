@@ -5,36 +5,37 @@ import "./Src/leftPage"
 import "./Src/rightPage"
 import "./Src/playMusic"
 import "./Src/commonUI"
+import "./Src/title"
 
-
-QQWindow {
-    id:window
+ZYYWindow {
+    id: window
     width: 1317
     height: 933
 
     LeftPage{
-        id:leftRect
+        id: leftRect
         width: 255
-        anchors.top:  parent.top
-        anchors.bottom: bottomRect.top
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
         color: "#1a1a21"
     }
 
-    RightPage{
-        id:rightRect
-        color: "#13131a" 
-        anchors.top: leftRect.top
-        anchors.bottom: bottomRect.top
+    RightPage {
+        id: rightRect
         anchors.left: leftRect.right
-        anchors.right: parent.right   
+        anchors.top: parent.top
+        anchors.bottom: bottomRect.top
+        anchors.right: parent.right
+        color: "#13131a"
     }
 
-    PlayMusic{
-        id:bottomRect
+    PlayMusic {
+        id: bottomRect
         height: 100
-        color: "#2d2d37"
         anchors.bottom: parent.bottom
         anchors.left: parent.left
         anchors.right: parent.right
+        color: "#2d2d37"
     }
 }
+

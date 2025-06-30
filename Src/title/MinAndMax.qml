@@ -1,43 +1,42 @@
-import Qt.QtQuick 2.15
+import QtQuick 2.15
+import QtQuick.Window 2.15
 import QtGraphicalEffects 1.15
 
-//最大化、最小化、退出
-Item{
-    id:mimMax
-    height: 60
-    anchors.top: parent.top
-    anchors.left: parent.left
-    anchors.right: parent.right
-    Row{
-        id:miniRow
-        spacing:15
-        anchors.verticalCenter: parent.verticalCenter
-        anchors.right: parent.right
-        anchors.rightMargin: 0.02*parent.width
-        spacing: 10
 
-        //....投屏按钮
+Item{
+    id:minMax
+
+    //最大化、最小化、退出
+    Row{
+        id: miniRow
+        spacing: 15
+        anchors.right: parent.right
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.rightMargin: 0.02*window.width
+
+        //...
         Image{
-            id:miniImg
-            anchors.verticalCenter: parent.verticalCenter
-            source: "qrc:/img/image/title/ico_kefu_nor.png"
-            layer.enabled: false
-            layer.effect: ColorOverlay {
-                color: "white"
+            id: miniImg
+            source: "qrc:/img/Resources/title/audio.png"
+            width: 20
+            height: 20
+            layer.enabled: true
+            layer.effect: ColorOverlay{
                 source: miniImg
+                color: "white"
             }
 
             MouseArea{
                 anchors.fill: parent
                 hoverEnabled: true
-                onEntered: function(){
+                onEntered: {
                     miniImg.layer.enabled = true
                 }
-                onExited: function(){
+                onExited: {
                     miniImg.layer.enabled = false
-                }                       
-                onClicked: function(){
-                    console.log("clicked")
+                }
+                onClicked: {
+
                 }
             }
         }
@@ -46,21 +45,20 @@ Item{
         Rectangle{
             id:miniRect
             width: 20
-            height: 2                
+            height: 2
             color: "#75777f"
             anchors.verticalCenter: parent.verticalCenter
 
             MouseArea{
                 anchors.fill: parent
                 hoverEnabled: true
-                onEntered: function(){
+                onEntered: {
                     miniRect.color = "white"
                 }
-                onExited: function(){
+                onExited: {
                     miniRect.color = "#75777f"
                 }
-                onClicked: function(){
-                    console.log("clicked")
+                onClicked: {
                     window.showMinimized()
                 }
             }
@@ -68,26 +66,24 @@ Item{
 
         //最大化
         Rectangle{
-            id:maxRect
+            id: maxRect
             width: 20
-            height: 2
-            color: "transparent"                   
-            border.color: "#75777f"
+            height: width
             border.width: 1
-            radius: 2
+            border.color: "transparent"
+            color: "transparent"
             anchors.verticalCenter: parent.verticalCenter
 
             MouseArea{
                 anchors.fill: parent
                 hoverEnabled: true
-                onEntered: function(){
+                onEntered: {
                     maxRect.border.color = "white"
                 }
-                onExited: function(){
+                onExited: {
                     maxRect.border.color = "#75777f"
                 }
-                onClicked: function(){
-                    //maxRect.showFullScreen()
+                onClicked: {
                     window.x = 0
                     window.y = 0
                     window.width = Screen.width - 1
@@ -96,31 +92,32 @@ Item{
             }
         }
 
-        //关闭
         Image{
-            id:closeImg
-            anchors.verticalCenter: parent.verticalCenter
-            source: "qrc:/img/image/title/icon_close_dialog.png"
-            layer.enabled: false
-            layer.effect: ColorOverlay {
-                color: "white"
+            id: closeImg
+            source: "qrc:/img/Resources/title/close.png"
+            width: 20
+            height: 20
+
+            layer.enabled: true
+            layer.effect: ColorOverlay{
                 source: closeImg
+                color: "white"
             }
 
             MouseArea{
                 anchors.fill: parent
                 hoverEnabled: true
-                onEntered: function(){
+                onEntered: {
                     closeImg.layer.enabled = true
                 }
-                onExited: function(){
+                onExited: {
                     closeImg.layer.enabled = false
                 }
-                onClicked: function(){
-                    console.log("clicked")
+                onClicked: {
                     Qt.quit()
                 }
-            }                   
+            }
         }
     }
+
 }

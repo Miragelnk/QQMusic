@@ -1,7 +1,14 @@
 <RCC>
     <qresource prefix="/img">
-        <file>image/title/ico_kefu_nor.png</file>
-        <file>image/title/icon_close_dialog.png</file>
-        <file>image/title/icon_close_dialog_hover.png</file>
+        <file>Resources/title/audio.png</file>
+        <file>Resources/title/cut.png</file>
+        <file>Resources/title/stop.png</file>
+        <file>Resources/title/close.png</file>
+        <file>Resources/title/user.png</file>
+        <file>Resources/title/arrow.png</file>
+        <file>Resources/title/message.png</file>
+        <file>Resources/title/setting.png</file>
+        <file>Resources/title/skin.png</file>
+        <file>Resources/title/search.png</file>
     </qresource>
 </RCC>
